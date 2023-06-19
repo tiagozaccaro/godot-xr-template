@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsesn2dkcjaii"]
+
+[ext_resource type="Script" path="res://addons/android-debug-tools/logcat_editor_debugger.gd" id="1_57rkt"]
+
+[node name="Logcat" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.657
+anchor_bottom = 0.971
+offset_right = 0.135994
+offset_bottom = -0.208049
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57rkt")
+
+[node name="VBLeft" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Log" type="RichTextLabel" parent="VBLeft"]
+layout_mode = 2
+size_flags_vertical = 3
+focus_mode = 2
+bbcode_enabled = true
+scroll_following = true
+context_menu_enabled = true
+threaded = true
+selection_enabled = true
+deselect_on_focus_loss_enabled = false
+
+[node name="SearchBox" type="LineEdit" parent="VBLeft"]
+layout_mode = 2
+placeholder_text = "Filter Messages"
+clear_button_enabled = true
+caret_blink = true
+caret_blink_interval = 0.5
+
+[node name="VBRight" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HBTools" type="HBoxContainer" parent="VBRight"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ClearButton" type="Button" parent="VBRight/HBTools"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+flat = true
+
+[node name="CopyButton" type="Button" parent="VBRight/HBTools"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+flat = true
+
+[node name="HBTools2" type="HBoxContainer" parent="VBRight"]
+layout_mode = 2
+
+[node name="CollapseButton" type="Button" parent="VBRight/HBTools2"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Collapse duplicate messages into one log entry. Shows number of occurrences."
+focus_mode = 0
+toggle_mode = true
+flat = true
+
+[node name="ShowSearchButton" type="Button" parent="VBRight/HBTools2"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+flat = true
+
+[node name="HSeparator" type="HSeparator" parent="VBRight"]
+layout_mode = 2
+
+[node name="StdFilterButton" type="Button" parent="VBRight"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Toggle visibility of standard output messages."
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+flat = true
+
+[node name="ErrorFilterButton" type="Button" parent="VBRight"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Toggle visibility of errors."
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+flat = true
+
+[node name="WarningFilterButton" type="Button" parent="VBRight"]
+layout_mode = 2
+size_flags_vertical = 3
+tooltip_text = "Toggle visibility of warnings."
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+flat = true
